@@ -119,38 +119,20 @@
       <!-- VIEW: Manage Filter Sets -->
       <div id="view-manage" class="max-w-5xl mx-auto block">
         
-        <!-- Title -->
-        <div class="flex items-center space-x-2">
-          <h1 class="text-[22px] font-bold text-gray-900">Filter</h1>
-          <a href="https://flintverse.gitbook.io/docs/findter-custom-filter-search/user-guide/create-and-set-up-filters" target="_blank" class="text-gray-500 hover:text-gray-700 cursor-pointer relative group flex items-center z-30">
-            <i class="fas fa-info-circle text-lg"></i>
-            <div class="absolute top-full mt-2 left-1/2 transform -translate-x-1/2 hidden group-hover:block w-56 bg-gray-800 text-white text-xs rounded py-2 px-3 text-center z-[60] shadow-lg pointer-events-none">
-              <div class="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"></div>
-              Create and assign filter sets to collections & search page
-            </div>
-          </a>
+        <!-- Title + help text -->
+        <div>
+          <div class="flex items-center space-x-2">
+            <h1 class="text-[22px] font-bold text-gray-900">Filter</h1>
+          </div>
+          <div class="text-sm text-gray-600 mt-1">
+            Learn more about Filter Feature <a href="#" class="underline font-bold text-blue-600 hover:text-blue-800">here</a>
+          </div>
         </div>
 
         <!-- Tabs -->
         <div class="flex items-center space-x-4 mt-6">
           <button class="bg-white border border-gray-300 shadow-sm rounded-md px-4 py-1.5 text-sm font-medium text-gray-900">Manage filter set</button>
           <button class="text-gray-600 hover:text-gray-900 px-4 py-1.5 text-sm font-medium">Boost in Collection</button>
-        </div>
-
-        <!-- Notification Box -->
-        <div class="mt-5 border border-gray-300 rounded-md shadow-sm overflow-hidden transition-all duration-300">
-          <div class="bg-[#cce3fe] px-4 py-3 flex items-center justify-between cursor-pointer" onclick="toggleNotiBox()">
-            <div class="flex items-center text-gray-900 font-medium text-sm">
-              <i class="fas fa-info-circle mr-2 text-[#0052cc]"></i> About the filter sets
-            </div>
-            <button class="text-gray-600 hover:text-gray-900 transition-colors h-6 w-6 flex items-center justify-center">
-              <i id="noti-chevron" class="fas fa-chevron-up text-xs"></i>
-            </button>
-          </div>
-          <div id="noti-content" class="px-4 py-3 text-sm text-gray-800 bg-white leading-relaxed border-t border-[#a8c6f2]">
-            <p><b>Default collections and Search Filter Set</b> covers all collections and search results by default.</p>
-            <p>Create new filter sets for specific collections <a href="#" class="text-blue-600 underline">here</a>.</p>
-          </div>
         </div>
 
         <!-- Filter sets card -->
@@ -180,13 +162,13 @@
                     </div>
                   </th>
                   <th class="py-3 px-5 font-bold text-sm text-gray-900">Filter set</th>
-                  <th class="py-3 px-5 font-bold text-sm text-gray-900">Collection</th>
+                  <th class="py-3 px-5 font-bold text-sm text-gray-900">Applies to</th>
                   <th class="py-3 px-5 font-bold text-sm text-gray-900 w-36">Actions</th>
                 </tr>
               </thead>
               <tbody id="filter-tbody">
                 <!-- Default Filter Set -->
-                <tr class="border-b border-gray-100 hover:bg-gray-50" data-name="Default collections and Search Filter Set" data-collections='["All Collections","Search Result Page"]' data-status="enabled">
+                <tr class="border-b border-gray-100 hover:bg-gray-50" data-name="Default Filter Set" data-collections='["All Collections","Search Result Page"]' data-status="enabled">
                   <td class="py-3 px-5">
                     <label class="flex items-center cursor-not-allowed opacity-60">
                       <div class="relative pointer-events-none">
@@ -195,18 +177,18 @@
                         <div class="dot absolute left-1 top-1 bg-white w-3 h-3 rounded-full transition-transform"></div>
                       </div>
                     </label>
-                  </td>
-                  <td class="py-3 px-5 text-sm text-gray-800">Default collections and Search Filter Set</td>
+                   </td>
+                  <td class="py-3 px-5 text-sm text-gray-800">Default Filter Set</td>
                   <td class="py-3 px-5 max-w-xs">
                     <div class="collection-chips flex flex-wrap gap-1.5" data-max-chips="5"></div>
-                  </td>
+                   </td>
                   <td class="py-3 px-5">
                     <div class="flex items-center space-x-2">
                       <button class="edit-btn p-1.5 px-2 border border-gray-300 rounded hover:bg-gray-100 relative group text-gray-600"><i class="fas fa-pencil-alt text-xs"></i><div class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 hidden group-hover:block bg-gray-800 text-white text-[11px] rounded py-1 px-2 whitespace-nowrap z-20">Edit</div></button>
                       <button class="duplicate-btn p-1.5 px-2 border border-gray-300 rounded hover:bg-gray-100 relative group text-gray-600"><i class="far fa-copy text-xs"></i><div class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 hidden group-hover:block bg-gray-800 text-white text-[11px] rounded py-1 px-2 whitespace-nowrap z-20">Duplicate</div></button>
                     </div>
-                  </td>
-                </tr>
+                   </td>
+                 </tr>
                 <!-- Row 2 -->
                 <tr class="border-b border-gray-100 hover:bg-gray-50" data-name="Ring" data-collections='["18K","14K","Platinum","Rose Gold","Yellow Gold","Silver"]' data-status="enabled">
                   <td class="py-3 px-5">
@@ -217,22 +199,22 @@
                         <div class="dot absolute left-1 top-1 bg-white w-3 h-3 rounded-full transition-transform"></div>
                       </div>
                     </label>
-                  </td>
+                   </td>
                   <td class="py-3 px-5 text-sm text-gray-800">Ring</td>
                   <td class="py-3 px-5 max-w-xs">
                     <div class="collection-chips flex flex-wrap gap-1.5" data-max-chips="5"></div>
                     <button class="collection-toggle mt-1 text-xs text-gray-800 font-medium hover:underline hidden" type="button" onclick="toggleCollectionList(this)">Show more</button>
-                  </td>
+                   </td>
                   <td class="py-3 px-5">
                     <div class="flex items-center space-x-2">
                       <button class="edit-btn p-1.5 px-2 border border-gray-300 rounded hover:bg-gray-100 relative group text-gray-600"><i class="fas fa-pencil-alt text-xs"></i><div class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 hidden group-hover:block bg-gray-800 text-white text-[11px] rounded py-1 px-2 whitespace-nowrap z-20">Edit</div></button>
                       <button class="duplicate-btn p-1.5 px-2 border border-gray-300 rounded hover:bg-gray-100 relative group text-gray-600"><i class="far fa-copy text-xs"></i><div class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 hidden group-hover:block bg-gray-800 text-white text-[11px] rounded py-1 px-2 whitespace-nowrap z-20">Duplicate</div></button>
                       <button class="remove-btn p-1.5 px-2 border border-gray-300 rounded hover:bg-gray-100 relative group text-gray-600"><i class="far fa-trash-alt text-xs"></i><div class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 hidden group-hover:block bg-gray-800 text-white text-[11px] rounded py-1 px-2 whitespace-nowrap z-20">Remove</div></button>
                     </div>
-                  </td>
-                </tr>
-                <!-- Row 3 -->
-                <tr class="border-b border-gray-100 hover:bg-gray-50">
+                   </td>
+                 </tr>
+                <!-- Row 3 (Neck) with proper dataset -->
+                <tr class="border-b border-gray-100 hover:bg-gray-50" data-name="Neck" data-collections='["Ring","Earring","Home page","LOL","Ultimate Search - Do not delete"]' data-status="enabled">
                   <td class="py-3 px-5">
                     <label class="flex items-center cursor-pointer">
                       <div class="relative">
@@ -241,55 +223,20 @@
                         <div class="dot absolute left-1 top-1 bg-white w-3 h-3 rounded-full transition-transform"></div>
                       </div>
                     </label>
-                  </td>
-                  <td class="py-3 px-5 text-sm text-gray-800">Ring</td>
-                  <td class="py-3 px-5 max-w-xs">
-                    <div class="flex flex-wrap gap-1.5">
-                      <span class="inline-block bg-gray-200 text-gray-700 text-xs px-2.5 py-1 rounded-full whitespace-nowrap">18K</span>
-                      <span class="inline-block bg-gray-200 text-gray-700 text-xs px-2.5 py-1 rounded-full whitespace-nowrap">14K</span>
-                    </div>
-                  </td>
-                  <td class="py-3 px-5">
-                    <div class="flex items-center space-x-2">
-                      <button class="p-1.5 px-2 border border-gray-300 rounded hover:bg-gray-100 relative group text-gray-600">
-                        <i class="fas fa-pencil-alt text-xs"></i>
-                        <div class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 hidden group-hover:block bg-gray-800 text-white text-[11px] rounded py-1 px-2 whitespace-nowrap z-20">Edit</div>
-                      </button>
-                      <button class="p-1.5 px-2 border border-gray-300 rounded hover:bg-gray-100 relative group text-gray-600">
-                        <i class="far fa-copy text-xs"></i>
-                        <div class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 hidden group-hover:block bg-gray-800 text-white text-[11px] rounded py-1 px-2 whitespace-nowrap z-20">Duplicate</div>
-                      </button>
-                      <button class="p-1.5 px-2 border border-gray-300 rounded hover:bg-gray-100 relative group text-gray-600" onclick="this.closest('tr').remove()">
-                        <i class="far fa-trash-alt text-xs"></i>
-                        <div class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 hidden group-hover:block bg-gray-800 text-white text-[11px] rounded py-1 px-2 whitespace-nowrap z-20">Remove</div>
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-                <!-- Row 4 -->
-                <tr class="border-b border-gray-100 hover:bg-gray-50" data-name="Neck" data-collections='["Ring","Earring","Home page","LOL","Ultimate Search - Do not delete"]' data-status="enabled">
-                  <td class="py-3 px-5 align-top">
-                    <label class="flex items-center cursor-pointer mt-1">
-                      <div class="relative">
-                        <input type="checkbox" class="sr-only switch-toggle" checked onchange="handleSwitch(this)" />
-                        <div class="block bg-gray-300 w-9 h-5 rounded-full transition-colors switch-bg"></div>
-                        <div class="dot absolute left-1 top-1 bg-white w-3 h-3 rounded-full transition-transform"></div>
-                      </div>
-                    </label>
-                  </td>
-                  <td class="py-3 px-5 text-sm text-gray-800 align-top pt-4">Neck</td>
+                   </td>
+                  <td class="py-3 px-5 text-sm text-gray-800">Neck</td>
                   <td class="py-3 px-5 max-w-md">
                     <div class="collection-chips flex flex-wrap gap-1.5 mb-1.5" data-max-chips="5"></div>
                     <button class="collection-toggle text-xs text-gray-800 font-medium hover:underline mt-1 hidden" type="button" onclick="toggleCollectionList(this)">Show more</button>
-                  </td>
-                  <td class="py-3 px-5 align-top pt-4">
+                   </td>
+                  <td class="py-3 px-5">
                     <div class="flex items-center space-x-2">
                       <button class="edit-btn p-1.5 px-2 border border-gray-300 rounded hover:bg-gray-100 relative group text-gray-600"><i class="fas fa-pencil-alt text-xs"></i><div class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 hidden group-hover:block bg-gray-800 text-white text-[11px] rounded py-1 px-2 whitespace-nowrap z-20">Edit</div></button>
                       <button class="duplicate-btn p-1.5 px-2 border border-gray-300 rounded hover:bg-gray-100 relative group text-gray-600"><i class="far fa-copy text-xs"></i><div class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 hidden group-hover:block bg-gray-800 text-white text-[11px] rounded py-1 px-2 whitespace-nowrap z-20">Duplicate</div></button>
                       <button class="remove-btn p-1.5 px-2 border border-gray-300 rounded hover:bg-gray-100 relative group text-gray-600"><i class="far fa-trash-alt text-xs"></i><div class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 hidden group-hover:block bg-gray-800 text-white text-[11px] rounded py-1 px-2 whitespace-nowrap z-20">Remove</div></button>
                     </div>
-                  </td>
-                </tr>
+                   </td>
+                 </tr>
               </tbody>
             </table>
           </div>
@@ -349,7 +296,7 @@
               <!-- Dropdown List -->
               <div id="collection-dropdown" class="absolute w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg z-20 hidden">
                 <label class="p-2.5 hover:bg-gray-100 cursor-pointer flex items-center m-0 rounded-md">
-                  <input type="checkbox" id="collection-checkbox" class="mr-3 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
+                  <input type="checkbox" class="mr-3 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
                   <span class="text-sm text-gray-700">[XCloud Search app] All products</span>
                 </label>
                 <label class="p-2.5 hover:bg-gray-100 cursor-pointer flex items-center m-0 rounded-md">
@@ -478,19 +425,6 @@
     editRow = null;
   }
 
-  // Noti box toggle
-  function toggleNotiBox() {
-    const content = document.getElementById('noti-content');
-    const chevron = document.getElementById('noti-chevron');
-    if (content.classList.contains('hidden')) {
-      content.classList.remove('hidden');
-      chevron.classList.replace('fa-chevron-down', 'fa-chevron-up');
-    } else {
-      content.classList.add('hidden');
-      chevron.classList.replace('fa-chevron-up', 'fa-chevron-down');
-    }
-  }
-
   // Dropdown toggle
   function toggleDropdown() {
     document.getElementById('collection-dropdown').classList.remove('hidden');
@@ -574,7 +508,7 @@
   }
 
   function initCollectionLists() {
-    document.querySelectorAll('tbody tr').forEach(renderCollectionChips);
+    document.querySelectorAll('#filter-tbody tr').forEach(renderCollectionChips);
   }
 
   // Close dropdown when clicking outside
@@ -602,7 +536,7 @@
   }
 
   function bindActions() {
-    document.querySelectorAll('tbody tr').forEach(row => {
+    document.querySelectorAll('#filter-tbody tr').forEach(row => {
       const edit = row.querySelector('.edit-btn');
       const remove = row.querySelector('.remove-btn');
       const duplicate = row.querySelector('.duplicate-btn');
@@ -641,12 +575,10 @@
     `;
     container.appendChild(toast);
     
-    // Animate in
     setTimeout(() => {
       toast.classList.remove('translate-y-[-100%]', 'opacity-0');
     }, 10);
 
-    // Auto remove after 2s
     setTimeout(() => {
       toast.classList.add('translate-y-[-100%]', 'opacity-0');
       setTimeout(() => {
@@ -675,11 +607,28 @@
       newRow.dataset.status = 'enabled';
       newRow.innerHTML = `
       <td class="py-3 px-5"><label class="flex items-center cursor-pointer mt-1"><div class="relative"><input type="checkbox" class="sr-only switch-toggle" checked onchange="handleSwitch(this)" /><div class="block bg-gray-300 w-9 h-5 rounded-full transition-colors switch-bg"></div><div class="dot absolute left-1 top-1 bg-white w-3 h-3 rounded-full transition-transform"></div></div></label></td>
-      <td class="py-3 px-5 text-sm text-gray-800">${name}</td>
+      <td class="py-3 px-5 text-sm text-gray-800">${escapeHtml(name)}</td>
       <td class="py-3 px-5 max-w-xs"><div class="collection-chips flex flex-wrap gap-1.5" data-max-chips="5"></div><button class="collection-toggle mt-1 text-xs text-gray-800 font-medium hover:underline hidden" type="button" onclick="toggleCollectionList(this)">Show more</button></td>
       <td class="py-3 px-5"><div class="flex items-center space-x-2"><button class="edit-btn p-1.5 px-2 border border-gray-300 rounded hover:bg-gray-100 relative group text-gray-600"><i class="fas fa-pencil-alt text-xs"></i><div class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 hidden group-hover:block bg-gray-800 text-white text-[11px] rounded py-1 px-2 whitespace-nowrap z-20">Edit</div></button><button class="duplicate-btn p-1.5 px-2 border border-gray-300 rounded hover:bg-gray-100 relative group text-gray-600"><i class="far fa-copy text-xs"></i><div class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 hidden group-hover:block bg-gray-800 text-white text-[11px] rounded py-1 px-2 whitespace-nowrap z-20">Duplicate</div></button><button class="remove-btn p-1.5 px-2 border border-gray-300 rounded hover:bg-gray-100 relative group text-gray-600"><i class="far fa-trash-alt text-xs"></i><div class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 hidden group-hover:block bg-gray-800 text-white text-[11px] rounded py-1 px-2 whitespace-nowrap z-20">Remove</div></button></div></td>`;
       tbody.appendChild(newRow);
-      function searchFilterSets(query) {
+      bindActions();
+      renderCollectionChips(newRow);
+      showToast('Filter set created successfully');
+    }
+    navigateToManage();
+    editRow = null;
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/[&<>]/g, function(m) {
+      if (m === '&') return '&amp;';
+      if (m === '<') return '&lt;';
+      if (m === '>') return '&gt;';
+      return m;
+    });
+  }
+
+  function searchFilterSets(query) {
     const term = query.toLowerCase();
     const rows = document.querySelectorAll('#filter-tbody tr');
     rows.forEach(row => {
@@ -690,15 +639,6 @@
         row.classList.add('hidden');
       }
     });
-  }
-
-  initCollectionLists();
-      bindActions();
-      renderCollectionChips(newRow);
-      showToast('Filter set created successfully');
-    }
-    navigateToManage();
-    editRow = null;
   }
 
   initCollectionLists();
