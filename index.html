@@ -16,7 +16,6 @@
     .switch-toggle:checked ~ .dot {
       transform: translateX(100%);
     }
-    /* Hide scrollbar for a cleaner sidebar look */
     ::-webkit-scrollbar {
       width: 6px;
       height: 6px;
@@ -125,7 +124,7 @@
             <h1 class="text-[22px] font-bold text-gray-900">Filter</h1>
           </div>
           <div class="text-sm text-gray-600 mt-1">
-            Guidelines for Filter Feature <a href="#" class="underline font-bold text-blue-600 hover:text-blue-800">here</a>
+            Filter Guidelines <a href="https://flintverse.gitbook.io/docs/findter-custom-filter-search/user-guide/create-and-set-up-filters/filter-overview-and-access" target="_blank" rel="noopener noreferrer" class="underline font-bold text-blue-600 hover:text-blue-800">here</a>
           </div>
         </div>
 
@@ -164,7 +163,7 @@
                   <th class="py-3 px-5 font-bold text-sm text-gray-900">Filter set</th>
                   <th class="py-3 px-5 font-bold text-sm text-gray-900">Applies to</th>
                   <th class="py-3 px-5 font-bold text-sm text-gray-900 w-36">Actions</th>
-                </tr>
+                 </tr>
               </thead>
               <tbody id="filter-tbody">
                 <!-- Default Filter Set -->
@@ -213,7 +212,7 @@
                     </div>
                    </td>
                  </tr>
-                <!-- Row 3 (Neck) with proper dataset -->
+                <!-- Row 3 (Neck) -->
                 <tr class="border-b border-gray-100 hover:bg-gray-50" data-name="Neck" data-collections='["Ring","Earring","Home page","LOL","Ultimate Search - Do not delete"]' data-status="enabled">
                   <td class="py-3 px-5">
                     <label class="flex items-center cursor-pointer">
@@ -254,24 +253,30 @@
 
       </div>
 
-      <!-- VIEW: Add Filter Set -->
+      <!-- VIEW: Add/Edit Filter Set -->
       <div id="view-add" class="max-w-4xl mx-auto hidden pb-24">
         
-        <!-- Header -->
-        <div class="mb-6 flex items-center">
-          <button onclick="navigateToManage()" class="mr-3 text-gray-600 hover:text-gray-900 w-8 h-8 rounded hover:bg-gray-200 flex items-center justify-center transition-colors">
-            <i class="fas fa-arrow-left"></i>
-          </button>
-          <h1 class="text-xl font-bold text-gray-900 mr-2">Add filter set</h1>
-          <div class="relative group flex items-center cursor-pointer">
-            <i class="far fa-info-circle text-gray-500"></i>
-            <div class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 hidden group-hover:block w-48 bg-gray-800 text-white text-xs rounded py-1 px-2 text-center z-10 shadow-lg">
-              Information about adding filter set
+        <!-- Header with back button, title, and guideline directly below -->
+        <div class="mb-6">
+          <div class="flex items-center">
+            <button onclick="navigateToManage()" class="mr-3 text-gray-600 hover:text-gray-900 w-8 h-8 rounded hover:bg-gray-200 flex items-center justify-center transition-colors">
+              <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1 id="add-edit-title" class="text-xl font-bold text-gray-900">Add Filter Set</h1>
+            <div class="relative group ml-2 flex items-center cursor-pointer">
+              <i class="far fa-info-circle text-gray-500"></i>
+              <div class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 hidden group-hover:block w-48 bg-gray-800 text-white text-xs rounded py-1 px-2 text-center z-10 shadow-lg">
+                Information about adding filter set
+              </div>
             </div>
+          </div>
+          <!-- Guideline placed right under the heading (both Add and Edit) -->
+          <div class="text-sm text-gray-600 mt-1 ml-9">
+            Filter Set Guidelines <a href="https://flintverse.gitbook.io/docs/findter-custom-filter-search/user-guide/create-and-set-up-filters/add-and-configure-filter-options" target="_blank" rel="noopener noreferrer" class="underline font-bold text-blue-600 hover:text-blue-800">here</a>
           </div>
         </div>
 
-        <!-- Information Card -->
+        <!-- Information Card (without extra guidelines) -->
         <div class="bg-white border border-gray-300 rounded-lg shadow-sm mb-6">
           <div class="px-5 py-3 border-b border-gray-200">
             <h2 class="text-sm font-bold text-gray-900">Information</h2>
@@ -356,7 +361,7 @@
           </div>
         </div>
 
-        <!-- Filter Options Card -->
+        <!-- Filter Options Card (no guideline inside) -->
         <div class="bg-white border border-gray-300 rounded-lg shadow-sm">
           <div class="px-5 py-3 flex items-center justify-between border-b border-gray-200">
             <h2 class="text-sm font-bold text-gray-900">Filter options</h2>
@@ -364,12 +369,10 @@
           </div>
           <div class="py-16 px-12 flex flex-col items-center justify-center text-center">
             
-            <!-- Empty State Illustration via CSS -->
+            <!-- Empty State Illustration -->
             <div class="relative w-32 h-32 mb-5 flex items-center justify-center mx-auto">
               <div class="absolute inset-0 bg-gray-100 rounded-full w-28 h-28 mx-auto mt-2"></div>
-              
               <div class="absolute z-0 w-[52px] h-[72px] bg-white border border-gray-200 shadow-sm right-7 bottom-4 transform rotate-[8deg] rounded-sm"></div>
-              
               <div class="relative z-10 w-[56px] h-[76px] bg-white border border-gray-200 shadow-sm flex flex-col py-3 px-2 rounded-sm transform -rotate-2 ml-1 mt-1">
                 <div class="w-[18px] h-[18px] bg-[#d59a56] self-start ml-1 mb-2.5"></div>
                 <div class="w-8 h-[3px] bg-gray-200 mb-1.5 ml-1 rounded-full"></div>
@@ -410,8 +413,15 @@
     document.getElementById('view-add').classList.remove('hidden');
     document.getElementById('add-footer').classList.remove('hidden');
     const isEdit = !!row;
-    document.querySelector('#view-add h1').textContent = isEdit ? 'Edit filter set' : 'Add filter set';
-    document.querySelector('#add-footer button').textContent = isEdit ? 'Save changes' : 'Save';
+    const titleEl = document.getElementById('add-edit-title');
+    const saveBtn = document.querySelector('#add-footer button');
+    if (isEdit) {
+      titleEl.textContent = 'Edit Filter Set';
+      saveBtn.textContent = 'Save changes';
+    } else {
+      titleEl.textContent = 'Add Filter Set';
+      saveBtn.textContent = 'Save';
+    }
     document.getElementById('filter-name').value = isEdit ? row.dataset.name : '';
     const selected = isEdit ? JSON.parse(row.dataset.collections || '[]') : [];
     syncCollectionCheckboxes(selected);
